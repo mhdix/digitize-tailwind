@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 " dir="rtl">
     <!-- app bar -->
-    <div class="flex items-center justify-between mt-5 px-4 mb-6">
+    <div class="flex md:hidden items-center justify-between mt-5 px-4 mb-6">
         <div class="">Digitize</div>
         <div class="text-lg font-bold text-slate-800">
             ساعت هوشمند
@@ -22,7 +22,7 @@
     </div>
 
     <!-- filter & sort mobile section -->
-    <div class="flex items-center justify-between px-4 gap-x-4">
+    <div class="flex md:hidden items-center justify-between px-4 gap-x-4 mb-9">
         <div class="bg-white rounded p-2 flex items-center justify-start w-1/2">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-orange-400">
@@ -39,6 +39,32 @@
             </div>
             <span class="text-xs text-slate-800 mr-2">فیلتر : برند</span>
         </div>
+    </div>
+
+    <!-- product section -->
+    <div class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="bg-white rounded-xl p-2 shadow-md">
+            <div class="mb-5">image</div>
+            <!-- product description -->
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-slate-200 text-sm">اپل</span>
+                <div>circles</div>
+            </div>
+            <!-- product title -->
+            <div class="text-slate-800 font-bold mb-2 text-sm">ساعت هوشمند اپل سری&nbsp;6</div>
+            <div class="text-orange-600 text-center text-sm mb-3"><span class="text-lg">12,150,000</span> تومان</div>
+            <hr >
+            <button class="text-sm w-full text-orange-600 py-1">مشاهده و سفارش</button>
+        </div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">2</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">3</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">4</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">5</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">6</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">7</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">8</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">9</div>
+        <div class="bg-white rounded-xl p-2 shadow-lg">10</div>
     </div>
 </body>
 </html>
