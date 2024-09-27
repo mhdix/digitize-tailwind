@@ -44,11 +44,29 @@
     <!-- product section -->
     <div class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <div class="bg-white rounded-xl p-2 shadow-md">
-            <div class="mb-5">image</div>
+            <div class="mb-5">
+                <img src="../assets/images/download.jpg" alt="">
+            </div>
             <!-- product description -->
             <div class="flex items-center justify-between mb-4">
                 <span class="text-slate-200 text-sm">اپل</span>
-                <div>circles</div>
+                <div class="flex items-center" x-data="{ color: 'red' }">
+                    <div @click="color = 'red'" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full cursor-pointer border-2 border-white bg-red-400 flex items-center justify-center" :class="color === 'red' ? 'ring-1 ring-red-300' : ''">
+                       <svg x-show="color == 'red'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 sm:w-5 sm:h-5 stroke-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                    </div>
+                    <div @click="color = 'blue'" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full cursor-pointer border-2 border-white -mr-1 bg-blue-400 flex items-center justify-center" :class="color === 'blue' ? 'ring-1 ring-blue-300' : ''">
+                        <svg x-show="color == 'blue'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 sm:w-5 sm:h-5 stroke-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                    </div>
+                    <div @click="color = 'green'" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full cursor-pointer border-2 border-white -mr-1 bg-green-400 flex items-center justify-center" :class="color === 'green' ? 'ring-1 ring-green-300' : ''">
+                        <svg x-show="color == 'green'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 sm:w-5 sm:h-5 stroke-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                    </div>
+                </div>
             </div>
             <!-- product title -->
             <div class="text-slate-800 font-bold mb-2 text-sm">ساعت هوشمند اپل سری&nbsp;6</div>
@@ -66,5 +84,7 @@
         <div class="bg-white rounded-xl p-2 shadow-lg">9</div>
         <div class="bg-white rounded-xl p-2 shadow-lg">10</div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.js"></script>
 </body>
 </html>
