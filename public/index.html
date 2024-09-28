@@ -42,14 +42,25 @@
     </div>
 
     <!-- product section -->
-    <div class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <div class="bg-white rounded-xl p-2 shadow-md">
+    <div class="grid gap-2 gap-y-4 md:gap-4 md: md:gap-x-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2" 
+                x-data="{
+                    products : [
+                        {id: 1, title: 'ساعت هوشمند', price: '12,540,000'},
+                        {id: 2, title: 'ساعت هوشمند', price: '12,540,000'},
+                        {id: 3, title: 'ساعت هوشمند', price: '12,540,000'},
+                        {id: 4, title: 'ساعت هوشمند', price: '12,540,000'},
+                        {id: 5, title: 'ساعت هوشمند', price: '12,540,000'},
+                        {id: 6, title: 'ساعت هوشمند', price: '12,540,000'},
+                ]}">
+
+        <template x-for="product in products" :key="product.id">
+            <div class="bg-white rounded-xl p-2 shadow-md">
             <div class="mb-5">
                 <img src="../assets/images/download.jpg" alt="">
             </div>
             <!-- product description -->
             <div class="flex items-center justify-between mb-4">
-                <span class="text-slate-200 text-sm">اپل</span>
+                <span class="text-slate-200 text-xs md:text-sm">اپل</span>
                 <div class="flex items-center" x-data="{ color: 'red' }">
                     <div @click="color = 'red'" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full cursor-pointer border-2 border-white bg-red-400 flex items-center justify-center" :class="color === 'red' ? 'ring-1 ring-red-300' : ''">
                        <svg x-show="color == 'red'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 sm:w-5 sm:h-5 stroke-white">
@@ -69,11 +80,14 @@
                 </div>
             </div>
             <!-- product title -->
-            <div class="text-slate-800 font-bold mb-2 text-sm">ساعت هوشمند اپل سری&nbsp;6</div>
-            <div class="text-orange-600 text-center text-sm mb-3"><span class="text-lg">12,150,000</span> تومان</div>
+            <div class="text-slate-800 font-bold mb-2 text-sm" x-text="product.title"></div>
+            <div class="text-orange-600 text-center text-sm mb-3"><span class="text-lg" x-text="product.price"></span> تومان</div>
             <hr >
             <button class="text-sm w-full text-orange-600 py-1">مشاهده و سفارش</button>
         </div>
+        </template>
+
+        
         <div class="bg-white rounded-xl p-2 shadow-lg">2</div>
         <div class="bg-white rounded-xl p-2 shadow-lg">3</div>
         <div class="bg-white rounded-xl p-2 shadow-lg">4</div>
