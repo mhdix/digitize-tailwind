@@ -46,7 +46,7 @@
         <div class="bg-white col-span-4 lg:col-span-3 row-span-2 hidden md:block">sidebar</div>
 
         <!-- sort section -->
-        <div class="bg-white col-span-8 lg:col-span-9 hidden md:block rounded-lg">
+        <div x-data="{ sort : 'popular' }" class="bg-white col-span-8 lg:col-span-9 hidden md:block rounded-lg">
             <div class="bg-white hidden md:block col-span-8 lg:col-span-9">
                 <div class="px-4 text-xs flex items-center gap-x-4 h-full text-gray-400 ">
                     <div class="bg-orange-100 p-1 rounded-md flex justify-center items-center text-orange-600">
@@ -55,14 +55,23 @@
                         </svg>
 
                     </div>
-                    <button class="py-4">محبوب ترین</button>
-                    <button class="py-4">گران ترین</button>
-                    <button class="py-4">ارزان ترین</button>
-                    <button class="py-4">پر فروش ترین</button>
+                    <button @click="sort = 'popular'" :class="sort === 'popular' ? 'text-slate-800 relative' : ''" class="py-4">
+                        <span class="w-2 h-2 bg-red-400 rounded-full absolute top-2 -left-2" :class="sort === 'popular' ? 'block' : 'hidden'"></span>
+                        محبوب ترین
+                    </button>
+                    <button @click="sort = 'expensive'" :class="sort === 'expensive' ? 'text-slate-800 relative' : ''" class="py-4">
+                        <span class="w-2 h-2 bg-red-400 rounded-full absolute top-2 -left-2" :class="sort === 'expensive' ? 'block' : 'hidden'"></span>
+                        گران ترین</button>
+                    <button @click="sort = 'cheapest'" :class="sort === 'cheapest' ? 'text-slate-800 relative' : ''" class="py-4">
+                        <span class="w-2 h-2 bg-red-400 rounded-full absolute top-2 -left-2" :class="sort === 'cheapest' ? 'block' : 'hidden'"></span>
+                        ارزان ترین</button>
+                    <button @click="sort = 'seller' " :class="sort === 'seller' ? 'text-slate-800 relative' : ''" class="py-4">
+                        <span class="w-2 h-2 bg-red-400 rounded-full absolute top-2 -left-2" :class="sort === 'seller' ? 'block' : 'hidden'"></span>
+                        پر فروش ترین</button>
                 </div>
             </div>
         </div>
-
+        
         <!-- product section -->
         <div class="grid col-span-12 md:col-span-8 lg:col-span-9">
             <div class="grid gap-2 gap-y-4 md:gap-4 md: md:gap-x-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 md:p-0" 
